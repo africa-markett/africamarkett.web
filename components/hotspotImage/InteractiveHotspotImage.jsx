@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 /**
@@ -218,13 +219,14 @@ export default function InteractiveHotspotImage({
 		<>
 			<style dangerouslySetInnerHTML={{ __html: styles }} />
 			<div className={`ii-stage ${className}`}>
-				<img
+				<Image
 					src={src}
 					alt={alt}
 					width={width}
 					height={height}
 					className="ii-image"
 					style={width && height ? { aspectRatio: `${width}/${height}` } : {}}
+					priority
 				/>
 
 				{hotspots.map((spot) => {
