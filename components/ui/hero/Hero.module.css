@@ -1,0 +1,64 @@
+.heroSlideContainer {
+  @apply relative h-full w-full;
+}
+
+.heroOverlay {
+  @apply absolute inset-0  flex items-end justify-start bg-transparent p-12 lg:px-[10%];
+}
+
+.heroContent {
+  @apply flex max-w-2xl mobile:max-w-[270px] flex-col items-start text-white;
+}
+
+.heroTitle {
+  @apply mb-4 block text-4xl font-bold !leading-normal lg:mb-6 lg:text-5xl xl:text-6xl;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.heroButton {
+  @apply cursor-pointer rounded-lg border border-white/20 !bg-[#004C3F40] px-4 py-[21px] backdrop-blur-md hover:!bg-[#004C3F] transition-all duration-300 ease-in-out lg:px-8 lg:py-4 lg:text-lg;
+}
+
+.heroButton:hover {
+  @apply -translate-y-1 transform transition-all duration-300 ease-in-out;
+}
+.heroButton:active {
+  @apply translate-y-0 transform;
+}
+
+.heroCarouselContainer {
+  @apply h-screen;
+}
+
+.heroSwiper {
+  @apply h-full;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+  .heroOverlay {
+    @apply p-6;
+  }
+
+  .heroTitle {
+    @apply mb-4 text-3xl;
+  }
+
+  .heroButton {
+    @apply px-5 py-3 text-sm;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroOverlay {
+    @apply p-4;
+  }
+
+  .heroTitle {
+    @apply mb-3 text-2xl;
+  }
+
+  .heroButton {
+    @apply px-4 py-2 text-xs;
+  }
+}

@@ -80,6 +80,7 @@ export default function InteractiveHotspotImage({
     .ii-stage {
       position: relative;
       width: 100%;
+	  height: 100%;
       overflow-x: hidden;
       line-height: 0;
       margin: 0 auto;
@@ -100,8 +101,8 @@ export default function InteractiveHotspotImage({
     }
 
     .ii-spot {
-      width: 18px;
-      height: 18px;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
       background: #fca400;
       box-shadow: 0 0 0 5px #004C3F4D, 0 6px 16px #004C3F4D;
@@ -134,11 +135,11 @@ export default function InteractiveHotspotImage({
       left: 50%;
       right: 50%;
       transform: translate(-50%, 100%);
-      background: #111;
-      color: #fff;
-      border-radius: 10px;
+      background: #FFE6B3;
+      color: #004C3F;
+      border-radius: 5px;
       padding: 10px 12px;
-      font-size: 14px;
+      font-size: 11px;
       line-height: 1.35;
       box-shadow: 0 8px 24px rgba(0,0,0,.35);
       width: max-content;
@@ -156,44 +157,16 @@ export default function InteractiveHotspotImage({
       pointer-events: auto;
     }
 
-    .ii-tip-arrow {
-      position: absolute;
-      top: -6px;
-      left: 50%;
-      transform: translateX(-50%) rotate(45deg);
-      width: 12px; 
-      height: 12px;
-      background: #111;
-      display: inline-block;
-    }
+   
 
     .ii-tip-inner { 
       display: block; 
       white-space: normal;
     }
 
-    .ii-tip a {
-      color: #4FC3F7;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 6px;
-    }
+   
 
-    .ii-tip a:hover {
-      text-decoration: underline;
-    }
-
-    @media (hover: none) {
-      .ii-spot { 
-        width: 22px; 
-        height: 22px; 
-      }
-      .ii-spot:hover {
-        transform: none;
-        box-shadow: 0 0 0 2px rgba(0,0,0,.15), 0 6px 16px rgba(0,0,0,.25);
-      }
-    }
-
+   
     @media (max-width: 768px) {
       .ii-tip {
         font-size: 12px;
@@ -225,7 +198,7 @@ export default function InteractiveHotspotImage({
 					width={width}
 					height={height}
 					className="ii-image"
-					style={width && height ? { aspectRatio: `${width}/${height}` } : {}}
+					style={{ height: "100%", objectFit: "cover" }}
 					priority
 				/>
 
