@@ -27,7 +27,7 @@
 }
 
 .heroCarouselContainer {
-  @apply h-screen;
+  @apply h-[100dvh] mobile:h-[85dvh];
 }
 
 .heroSwiper {

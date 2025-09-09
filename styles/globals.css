@@ -18,7 +18,6 @@ body {
 /* Hero Carousel Styles */
 .hero-carousel-container {
   position: relative;
-  overflow: hidden;
 }
 
 .hero-swiper {

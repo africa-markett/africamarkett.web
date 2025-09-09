@@ -1,7 +1,7 @@
 import HotspotImage from '@/components/hotspotImage/HotspotImage';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, EffectFade, Pagination, Autoplay, Mousewheel } from 'swiper/modules';
+import { Navigation, EffectFade, Pagination, Autoplay } from 'swiper/modules';
 import styles from './Hero.module.css';
 
 // Import Swiper styles
@@ -29,7 +29,7 @@ export default function Hero() {
       href: '/catalog/ndebele-panel-left',
       content: (
         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -46,8 +46,8 @@ export default function Hero() {
       left: '76.5%',
       href: '/catalog/wax-print-set-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -64,8 +64,8 @@ export default function Hero() {
       left: '93.2%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -84,8 +84,8 @@ export default function Hero() {
       left: '17.2%',
       href: '/catalog/ndebele-panel-left',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -102,8 +102,8 @@ export default function Hero() {
       left: '31.5%',
       href: '/catalog/wax-print-set-right',
       content: (
-          <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -120,8 +120,8 @@ export default function Hero() {
       left: '42.8%',
       href: '/catalog/cloak-far-right',
       content: (
-          <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -138,8 +138,8 @@ export default function Hero() {
       left: '53.2%',
       href: '/catalog/cloak-far-right',
       content: (
-          <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -156,8 +156,8 @@ export default function Hero() {
       left: '63.9%',
       href: '/catalog/cloak-far-right',
       content: (
-          <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -174,8 +174,8 @@ export default function Hero() {
       left: '74.6%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -192,8 +192,8 @@ export default function Hero() {
       left: '61.2%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -210,8 +210,8 @@ export default function Hero() {
       left: '38.2%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -228,8 +228,8 @@ export default function Hero() {
       left: '46.8%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -246,8 +246,8 @@ export default function Hero() {
       left: '73.2%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -266,8 +266,8 @@ export default function Hero() {
       left: '10.9%',
       href: '/catalog/ndebele-panel-left',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -284,8 +284,8 @@ export default function Hero() {
       left: '23.3%',
       href: '/catalog/wax-print-set-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -302,8 +302,8 @@ export default function Hero() {
       left: '35.6%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -320,8 +320,8 @@ export default function Hero() {
       left: '50.5%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -338,8 +338,8 @@ export default function Hero() {
       left: '65.2%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -356,8 +356,8 @@ export default function Hero() {
       left: '86.6%',
       href: '/catalog/cloak-far-right',
       content: (
-         <div>
-          <Link href="/catalog/ndebele-panel-left" >
+        <div>
+          <Link href="/catalog/ndebele-panel-left">
             <div className="flex items-center justify-between gap-5">
               <p>Combo Gown</p>
 
@@ -399,11 +399,11 @@ export default function Hero() {
         slidesPerView={1}
         spaceBetween={0}
         effect={'fade'}
-        // mousewheel={{
-        //   forceToAxis: true,
-        //   sensitivity: 1,
-        //   releaseOnEdges: true,
-        // }}
+        allowTouchMove={false}
+        touchStartPreventDefault={false}
+        simulateTouch={false}
+        touchRatio={0}
+        passiveListeners={true}
         pagination={{
           clickable: true,
         }}
@@ -412,9 +412,9 @@ export default function Hero() {
           disableOnInteraction: false,
         }}
         loop={true}
-        modules={[Navigation, EffectFade, Autoplay, Pagination, Mousewheel]}
+        modules={[Navigation, EffectFade, Autoplay, Pagination]}
         className="hero-swiper"
-        style={{ height: '100%' }}
+        style={{ height: '100%', touchAction: 'pan-y' }}
       >
         {heroSlides.map((slide, index) => (
           <SwiperSlide key={index}>
