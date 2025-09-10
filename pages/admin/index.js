@@ -13,7 +13,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Chip
+  Chip,
 } from '@mui/material';
 import { TrendingUp, ShoppingCart, People, Inventory } from '@mui/icons-material';
 
@@ -22,23 +22,28 @@ export default function AdminDashboard() {
     totalSales: 12450.75,
     totalOrders: 156,
     totalCustomers: 89,
-    totalProducts: 45
+    totalProducts: 45,
   });
 
   const [recentOrders] = useState([
     { id: '#001', customer: 'John Doe', amount: 45.99, status: 'Completed', date: '2025-09-10' },
-    { id: '#002', customer: 'Jane Smith', amount: 125.50, status: 'Processing', date: '2025-09-10' },
+    { id: '#002', customer: 'Jane Smith', amount: 125.5, status: 'Processing', date: '2025-09-10' },
     { id: '#003', customer: 'Bob Johnson', amount: 89.99, status: 'Shipped', date: '2025-09-09' },
-    { id: '#004', customer: 'Alice Brown', amount: 67.25, status: 'Pending', date: '2025-09-09' }
+    { id: '#004', customer: 'Alice Brown', amount: 67.25, status: 'Pending', date: '2025-09-09' },
   ]);
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'Completed': return 'success';
-      case 'Processing': return 'warning';
-      case 'Shipped': return 'info';
-      case 'Pending': return 'default';
-      default: return 'default';
+      case 'Completed':
+        return 'success';
+      case 'Processing':
+        return 'warning';
+      case 'Shipped':
+        return 'info';
+      case 'Pending':
+        return 'default';
+      default:
+        return 'default';
     }
   };
 
@@ -61,16 +66,14 @@ export default function AdminDashboard() {
                   <Typography color="text.secondary" gutterBottom variant="h6">
                     Total Sales
                   </Typography>
-                  <Typography variant="h4">
-                    ${stats.totalSales.toLocaleString()}
-                  </Typography>
+                  <Typography variant="h4">${stats.totalSales.toLocaleString()}</Typography>
                 </Box>
                 <TrendingUp color="primary" sx={{ fontSize: 40 }} />
               </Box>
             </CardContent>
           </Card>
         </Grid>
-        
+
         <Grid item xs={12} sm={6} md={3}>
           <Card>
             <CardContent>
@@ -79,16 +82,14 @@ export default function AdminDashboard() {
                   <Typography color="text.secondary" gutterBottom variant="h6">
                     Total Orders
                   </Typography>
-                  <Typography variant="h4">
-                    {stats.totalOrders}
-                  </Typography>
+                  <Typography variant="h4">{stats.totalOrders}</Typography>
                 </Box>
                 <ShoppingCart color="primary" sx={{ fontSize: 40 }} />
               </Box>
             </CardContent>
           </Card>
         </Grid>
-        
+
         <Grid item xs={12} sm={6} md={3}>
           <Card>
             <CardContent>
@@ -97,16 +98,14 @@ export default function AdminDashboard() {
                   <Typography color="text.secondary" gutterBottom variant="h6">
                     Customers
                   </Typography>
-                  <Typography variant="h4">
-                    {stats.totalCustomers}
-                  </Typography>
+                  <Typography variant="h4">{stats.totalCustomers}</Typography>
                 </Box>
                 <People color="primary" sx={{ fontSize: 40 }} />
               </Box>
             </CardContent>
           </Card>
         </Grid>
-        
+
         <Grid item xs={12} sm={6} md={3}>
           <Card>
             <CardContent>
@@ -115,9 +114,7 @@ export default function AdminDashboard() {
                   <Typography color="text.secondary" gutterBottom variant="h6">
                     Products
                   </Typography>
-                  <Typography variant="h4">
-                    {stats.totalProducts}
-                  </Typography>
+                  <Typography variant="h4">{stats.totalProducts}</Typography>
                 </Box>
                 <Inventory color="primary" sx={{ fontSize: 40 }} />
               </Box>
@@ -150,8 +147,8 @@ export default function AdminDashboard() {
                     <TableCell>{order.customer}</TableCell>
                     <TableCell>${order.amount}</TableCell>
                     <TableCell>
-                      <Chip 
-                        label={order.status} 
+                      <Chip
+                        label={order.status}
                         color={getStatusColor(order.status)}
                         size="small"
                       />
