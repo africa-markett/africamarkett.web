@@ -244,7 +244,7 @@ export default function InteractiveHotspotImage({
 }
 
 // Demo usage
-function Demo() {
+function _Demo() {
 	const hotspots = [
 		{
 			id: "panel-left",
@@ -299,7 +299,7 @@ function Demo() {
 				Interactive Image Component Demo
 			</h1>
 
-			<InteractiveImage
+			<InteractiveHotspotImage
 				src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=800&fit=crop"
 				alt="African fashion showcase"
 				width={1200}

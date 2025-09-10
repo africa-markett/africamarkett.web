@@ -1,4 +1,4 @@
-import HotspotImage from '@/components/hotspotImage/HotspotImage';
+import HotspotImage from '@/components/features/interactive-image/HotspotImage';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectFade, Pagination, Autoplay } from 'swiper/modules';

@@ -22,8 +22,9 @@ import Image from 'next/image';
 
 const NAV_ITEMS = [
   { label: 'Home', href: '/', icon: '' },
+  { label: 'Products', href: '/products', icon: '/assests/icons/catlog-icon.png' },
   { label: 'About', href: '/about', icon: '' },
-  { label: 'Catalog', href: '/catalog', icon: '/assests/icons/catlog-icon.png' },
+  { label: 'Contact', href: '/contact', icon: '' },
 ];
 
 export default function Header({ styles, cartCount = 0 }) {
