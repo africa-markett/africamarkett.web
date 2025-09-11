@@ -7,16 +7,16 @@
 }
 
 .heroContent {
-  @apply flex max-w-2xl mobile:max-w-[270px] flex-col items-start text-white;
+  @apply flex max-w-2xl mobile:max-w-[320px] flex-col items-start text-white;
 }
 
 .heroTitle {
-  @apply mb-4 block text-4xl font-bold !leading-normal lg:mb-6 lg:text-5xl xl:text-6xl;
+  @apply mb-4 block !text-3xl font-bold !leading-normal lg:mb-6 lg:text-5xl xl:text-6xl;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .heroButton {
-  @apply cursor-pointer rounded-lg border border-white/20 !bg-[#004C3F40] px-4 py-[21px] backdrop-blur-md hover:!bg-[#004C3F] transition-all duration-300 ease-in-out lg:px-8 lg:py-4 lg:text-lg;
+  @apply cursor-pointer rounded-lg border border-white/20 !bg-[#004C3F40] px-4 py-[21px] backdrop-blur-md hover:!bg-[#004C3F] transition-all duration-300 ease-in-out lg:px-8 lg:py-4 lg:text-lg !text-xl;
 }
 
 .heroButton:hover {

@@ -393,7 +393,7 @@ export default function Hero() {
   ];
 
   return (
-    <div className={styles.heroCarouselContainer}>
+    <div className={`${styles.heroCarouselContainer} hero-section`}>
       <Swiper
         direction="vertical"
         slidesPerView={1}

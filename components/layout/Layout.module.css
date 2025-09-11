@@ -1,42 +1,49 @@
 /* Header */
 .header {
   @apply border border-white/20 !bg-[#004C3F40] px-4 py-[21px] backdrop-blur-md hover:bg-[#004C3F40]/20 md:px-6 lg:px-[2%];
+  z-index: 1000;
+}
+
+.headerVisible {
+  transform: translateY(0);
+}
+
+.headerHidden {
+  transform: translateY(-100%);
 }
 .navItems {
   @apply flex items-center gap-3;
 }
 .navLink {
-  @apply text-brand-cream hover:text-brand-gold font-medium;
+  @apply font-medium text-brand-cream hover:text-brand-gold;
 }
 
 .navLinkActive {
   @apply text-brand-gold;
 }
 .cartBtn {
-  @apply !text-brand-cream hover:!text-brand-gold flex items-center gap-2 !text-[16px] !font-normal;
+  @apply flex items-center gap-2 !text-[16px] !font-normal !text-brand-cream hover:!text-brand-gold;
 }
 .badge {
-  @apply bg-brand-cream text-brand-green flex items-center justify-center rounded-md px-[10px] py-[5px] text-[14px] font-semibold;
+  @apply flex items-center justify-center rounded-md bg-brand-cream px-[10px] py-[5px] text-[14px] font-semibold text-brand-green;
 }
 .contactUsBtn {
-  @apply !bg-brand-cream !text-brand-green hover:!bg-brand-gold/90 flex items-center gap-2 !rounded-full !px-3 !py-2 !font-semibold !normal-case md:gap-3 md:!px-4 md:!py-3;
+  @apply flex items-center gap-2 !rounded-full !bg-brand-cream !px-3 !py-2 !font-semibold !normal-case !text-brand-green hover:!bg-brand-gold/90 md:gap-3 md:!px-4 md:!py-3;
 }
 
 /* Footer Styles */
 .footer {
-  @apply bg-brand-green relative overflow-hidden text-white;
+  @apply relative overflow-hidden bg-brand-green text-white;
   background-image: url('/assests/imgs/footer-bg.png');
   background-size: cover;
 }
-
-
 
 .footerContainer {
   @apply container relative mx-auto px-4 py-12 lg:px-8;
 }
 
 .footerContent {
-  @apply mb-12 grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-4 justify-items-end;
+  @apply mb-12 grid grid-cols-1 justify-items-end gap-20 md:grid-cols-2 lg:grid-cols-4;
 }
 
 .footerBrandSection {
@@ -47,9 +54,8 @@
   @apply mb-4 flex items-center gap-2;
 }
 
-
 .footerBrandDescription {
-  @apply text-white mb-6 text-sm leading-relaxed;
+  @apply mb-6 text-sm leading-relaxed text-white;
 }
 
 .footerSocialIcons {
@@ -65,25 +71,23 @@
 }
 
 .footerSectionTitle {
-  @apply text-white mb-4 text-lg font-semibold;
+  @apply mb-4 text-lg font-semibold text-white;
 }
 
 .footerSectionList {
-  @apply text-white space-y-8 text-sm;
+  @apply space-y-8 text-sm text-white;
 }
 
 .footerSectionLink {
-  @apply hover:text-brand-gold transition-colors;
+  @apply transition-colors hover:text-brand-gold;
 }
-
-
 
 .footerBottomContent {
   @apply flex flex-col items-center justify-between gap-4 md:flex-row;
 }
 
 .footerCopyright {
-  @apply text-white/80 mt-4 text-sm;
+  @apply mt-4 text-sm text-white/80;
 }
 
 .footerTaglineWrapper {
@@ -91,5 +95,5 @@
 }
 
 .footerTagline {
-  @apply text-white text-lg font-semibold tracking-widest;
+  @apply text-lg font-semibold tracking-widest text-white;
 }

@@ -1,4 +1,4 @@
-import { useState, useMemo, Fragment } from 'react';
+import { useState, useMemo, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import {
@@ -29,6 +29,10 @@ const NAV_ITEMS = [
 
 export default function Header({ styles, cartCount = 0 }) {
   const [open, setOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isAtTop, setIsAtTop] = useState(true);
+
   const toggle = (val) => () => setOpen(val);
 
   const router = useRouter();
@@ -37,6 +41,36 @@ export default function Header({ styles, cartCount = 0 }) {
     if (href === '/') return router.asPath === '/';
     return router.asPath.startsWith(href);
   };
+
+  useEffect(() => {
+    const controlHeader = () => {
+      const currentScrollY = window.scrollY;
+
+      // Check if we're at the top
+      setIsAtTop(currentScrollY < 50);
+
+      // Always show header when at the very top
+      if (currentScrollY < 50) {
+        setIsVisible(true);
+      } else {
+        // Show/hide based on scroll direction
+        if (currentScrollY > lastScrollY) {
+          // Scrolling down - hide header
+          setIsVisible(false);
+        } else {
+          // Scrolling up - show header
+          setIsVisible(true);
+        }
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', controlHeader);
+    return () => {
+      window.removeEventListener('scroll', controlHeader);
+    };
+  }, [lastScrollY]);
 
   // For accessibility: trap focus order for the drawer list.
   const drawerList = useMemo(
@@ -100,7 +134,15 @@ export default function Header({ styles, cartCount = 0 }) {
   );
 
   return (
-    <AppBar position="fixed" elevation={1} className={styles.header}>
+    <AppBar
+      position="fixed"
+      elevation={1}
+      className={`${styles.header} ${isVisible ? styles.headerVisible : styles.headerHidden}`}
+      style={{
+        transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
+        transition: 'transform 0.3s ease-in-out',
+      }}
+    >
       <Toolbar className="container mx-auto flex justify-between !px-4 lg:!px-[100px]">
         {/* Logo */}
         <Image

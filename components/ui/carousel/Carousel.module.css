@@ -1,0 +1,106 @@
+/* Carousel Container */
+.carousel {
+  @apply relative w-full;
+}
+
+.carouselContainer {
+  @apply relative w-full; /* Add padding to give space for navigation arrows */
+}
+
+/* Swiper Specific Styles */
+.swiper {
+  @apply h-full w-full;
+}
+
+.swiperSlide {
+  @apply flex items-center justify-center h-full mobile:!w-[250px];
+}
+/* .custom-carousel :global(.swiper-slide) {
+  @apply !max-w-[360px]; 
+} */
+
+/* Customizing Swiper Navigation Arrows */
+.custom-carousel :global(.swiper-button-next),
+.custom-carousel :global(.swiper-button-prev) {
+  @apply h-10 w-10 rounded-full bg-white shadow-md;
+  color: #000 !important; /* Override default color */
+}
+
+.custom-carousel :global(.swiper-button-next)::after,
+.custom-carousel :global(.swiper-button-prev)::after {
+  font-size: 1rem !important; /* Make arrow icon smaller */
+  font-weight: 700 !important;
+}
+
+.custom-carousel :global(.swiper-button-prev) {
+  left: 0px !important;
+}
+.custom-carousel :global(.swiper-button-next) {
+  right: 0px !important;
+}
+
+/* Customizing Swiper Pagination Dots */
+.custom-carousel :global(.swiper-pagination-bullet) {
+  @apply bg-gray-400;
+  width: 8px;
+  height: 8px;
+  opacity: 0.7;
+}
+
+.custom-carousel :global(.swiper-pagination-bullet-active) {
+  @apply bg-brand-green;
+  opacity: 1;
+}
+
+/* Focus States for Accessibility */
+.navButton:focus,
+.dot:focus {
+  @apply outline-none ring-2 ring-brand-gold ring-offset-2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .navButton {
+    @apply h-10 w-10 text-xl;
+  }
+
+  .prevButton {
+    @apply -left-4;
+  }
+
+  .nextButton {
+    @apply -right-4;
+  }
+
+  .dotsContainer {
+    @apply mt-6;
+  }
+}
+
+/* Animation for smooth loading */
+.carouselItems {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Drag indicators and feedback */
+.carouselTrack.dragging .carouselItems {
+  transition: none !important;
+}
+
+.carouselTrack.dragging * {
+  pointer-events: none; /* Prevent clicking during drag */
+}
+
+/* Improve touch scrolling */
+.carouselTrack {
+  -webkit-overflow-scrolling: touch;
+}
