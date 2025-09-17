@@ -1,8 +1,12 @@
-import MirrorScrollLookbook from '@/components/features/lookbook/MirrorScrollLookbook';
+import BestSellers from '@/components/features/home/best-sellers/BestSellers';
+import FAQ from '@/components/features/home/faq/FAQ';
+import MirrorScrollLookbook from '@/components/features/home/lookbook/MirrorScrollLookbook';
+import TheMarkettWay from '@/components/features/home/markett-way/TheMarkettWay';
+import Newsletter from '@/components/features/home/newsletter/Newsletter';
+import ProductSpotlight from '@/components/features/home/product-spotlight/ProductSpotlight';
+import TopRated from '@/components/features/home/top-rated/TopRated';
 import Hero from '@/components/ui/hero/Hero';
-import TopRated from '@/components/features/top-rated/TopRated';
 import { Box } from '@mui/material';
-import BestSellers from '@/components/features/best-sellers/BestSellers';
 
 export default function Home() {
   return (
@@ -11,6 +15,10 @@ export default function Home() {
       <MirrorScrollLookbook />
       <TopRated />
       <BestSellers />
+      <ProductSpotlight />
+      <TheMarkettWay />
+      <FAQ />
+      <Newsletter />
     </Box>
   );
 }

@@ -1,0 +1,84 @@
+/* Tailwind CSS classes will be used instead of CSS module styles */
+.cardsScroller {
+  @apply h-[300vh];
+}
+
+.cardColumn {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.headerContainer {
+  @apply   py-16 px-[10%] mobile:px-[2%];
+}
+
+.headerTitle {
+  @apply text-[43px] font-black text-brand-green;
+}
+.headerTitle span {
+  @apply text-[#737373];
+}
+
+.mobileContainer {
+  @apply block pb-10 md:hidden;
+}
+
+.mobileCard {
+  @apply relative mb-1 h-[465px] w-full;
+}
+
+.cardOverlay {
+  @apply absolute inset-0 z-10;
+}
+
+.cardContent {
+  @apply relative z-20 h-full p-4;
+}
+
+.cardContentDesktop {
+  @apply relative z-20 h-full p-4 px-[40px] pb-14;
+}
+
+.cardInner {
+  @apply flex h-full w-full flex-col justify-end;
+}
+
+.cardLink {
+  @apply inline-block;
+}
+
+.shopButton {
+  @apply cursor-pointer rounded-md bg-brand-green px-6 py-5 text-center text-[16px] font-black text-brand-cream transition-colors hover:bg-brand-green/90;
+}
+
+.cardImage {
+  @apply absolute inset-0;
+}
+
+.image {
+  @apply h-full w-full object-cover;
+}
+
+.desktopContainer {
+  @apply hidden md:block;
+}
+
+.stickyViewbox {
+  @apply sticky top-0 h-screen overflow-hidden;
+}
+
+.flexContainer {
+  @apply flex h-full w-full;
+}
+
+.cardsWrapper {
+  @apply w-1/2;
+}
+
+.cardHalf {
+  @apply w-full;
+}
+
+.cardSlide {
+  @apply relative h-screen w-full;
+}

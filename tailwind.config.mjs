@@ -17,7 +17,7 @@ export default {
           goldLight: '#F0C35B',
           goldDark: '#A87C2A',
           cream: '#FFE6B3',
-          paper: '#FFE6B3',
+          paper: '#fff3da',
           footer: '#004C3F',
           ink: '#0C1B17',
         },

@@ -1,0 +1,77 @@
+/* FAQ.module.css */
+
+.container {
+  @apply  px-[10%] py-20 mobile:px-[2%];
+}
+
+.content {
+  @apply mx-auto max-w-6xl;
+}
+
+.header {
+  @apply mb-12 text-center;
+}
+
+.subtitle {
+  @apply mb-4 block text-[19px] font-black uppercase  text-brand-green;
+}
+
+.title {
+  @apply text-[43px] font-extrabold leading-tight text-brand-green ;
+}
+
+.faqList {
+  @apply space-y-4;
+}
+
+.faqItem {
+  @apply overflow-hidden rounded-[10px] bg-brand-paper shadow-sm;
+}
+
+.faqQuestion {
+  @apply flex w-full cursor-pointer items-center justify-between border-none p-6 text-left text-lg font-bold text-brand-green transition-colors duration-200 hover:bg-brand-paper/90;
+}
+
+.faqQuestion.active {
+  @apply bg-brand-paper/90;
+}
+
+.questionText {
+  @apply flex-1 pr-4;
+}
+
+.icon {
+  @apply flex-shrink-0 text-2xl font-bold text-brand-green;
+}
+
+.faqAnswer {
+  @apply overflow-hidden text-brand-green font-semibold transition-all duration-300 ease-in-out;
+  max-height: 0;
+}
+
+.faqAnswer.open {
+  max-height: 200px;
+}
+
+.answerContent {
+  @apply p-6 pt-0 leading-relaxed ;
+}
+
+.answerContent p {
+  @apply m-0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title {
+    @apply text-3xl;
+  }
+
+  .faqQuestion {
+    @apply p-4 text-base;
+  }
+
+  .answerContent {
+    @apply p-4 pt-0;
+  }
+}

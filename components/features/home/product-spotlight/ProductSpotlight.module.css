@@ -1,0 +1,40 @@
+/* ProductSpotlight.module.css */
+
+.container {
+  @apply relative  overflow-hidden  px-[10%] mobile:px-[2%] pt-20 pb-10;
+}
+
+.content {
+  @apply  mx-auto grid h-full  grid-cols-1 items-center ;
+}
+
+.textSection {
+  @apply flex justify-between;
+}
+/* .textContent {
+  @apply mt-4 flex flex-col items-center lg:items-start;
+} */
+
+.title {
+  @apply md:max-w-md  font-black leading-tight tracking-tight text-brand-green text-5xl;
+}
+
+.description {
+  @apply mx-auto mb-6 max-w-xl text-lg font-bold leading-relaxed text-[#2d5016] lg:mx-0;
+}
+
+.shopButton {
+  @apply transform rounded-[4px] bg-brand-green px-8 py-3 text-base font-semibold text-brand-cream shadow-lg transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-[#0a3a2e] hover:shadow-xl;
+}
+
+.imageSection {
+  @apply order-1 flex items-center justify-center lg:order-2 mt-8;
+}
+
+.imageContainer {
+  @apply relative w-full h-[800px] overflow-hidden rounded-[8px] shadow-xl;
+}
+
+.spotlightImage {
+  @apply block h-full w-full object-cover transition-transform duration-300 ease-in-out hover:scale-105;
+}

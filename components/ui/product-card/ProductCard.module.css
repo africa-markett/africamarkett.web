@@ -7,11 +7,11 @@
 
 /* Image Container */
 .imageContainer {
-  @apply relative md:h-[400px] h-[250px] lg:h-[500px] bg-gray-100 overflow-hidden;
+  @apply relative md:h-[400px] h-[250px] lg:h-[400px] bg-gray-100 overflow-hidden;
 }
 
 .productImage {
-  @apply object-cover transition-transform duration-300;
+  @apply object-cover h-full w-full;
 }
 
 /* .productCard:hover .productImage {

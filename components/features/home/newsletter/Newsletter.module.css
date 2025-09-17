@@ -1,0 +1,87 @@
+/* Newsletter.module.css */
+
+.container {
+  @apply relative min-h-screen overflow-hidden mb-24;
+}
+
+.backgroundImage {
+  @apply absolute inset-0 h-full w-full;
+  background-image: url('/assests/imgs/newsletter.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  @apply absolute inset-0 flex items-end justify-end p-[5%];
+}
+
+.content {
+  @apply max-w-4xl rounded-[16px] p-6 ;
+  background: #004c3f40;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(250, 250, 250, 0.2);
+}
+
+.title {
+  @apply mb-6 text-[43px] font-black leading-normal text-[#f5ffff];
+}
+
+.description {
+  @apply mb-8 text-[19px] font-medium leading-relaxed text-[#f5ffff];
+}
+
+.highlight {
+  @apply font-semibold;
+}
+
+.form {
+  @apply relative ml-auto max-w-md;
+}
+
+.emailInput {
+  @apply w-full rounded-full border-none py-6 pl-8 pr-52 text-[14px] placeholder:text-[13px] placeholder:text-brand-green text-brand-green outline-none bg-brand-cream;
+}
+
+
+.submitButton {
+  @apply absolute bottom-1 right-1 top-1 whitespace-nowrap rounded-full bg-brand-green px-8 text-[13px] font-normal text-brand-cream transition-all duration-300 hover:bg-opacity-90;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .galleryGrid {
+    @apply grid-cols-3 gap-2 p-4;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    @apply min-h-[80vh];
+  }
+
+  .galleryGrid {
+    @apply grid-cols-2 gap-2 p-2;
+  }
+
+  .title {
+    @apply mb-4 text-3xl;
+  }
+
+  .description {
+    @apply mb-6 text-base;
+  }
+
+  .description br {
+    display: none;
+  }
+
+  .form {
+    @apply flex-col gap-3;
+  }
+
+  .emailInput {
+    @apply w-full min-w-0;
+  }
+}

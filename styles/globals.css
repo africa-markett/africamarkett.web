@@ -12,7 +12,7 @@ body,
 }
 
 body {
-  @apply font-sans bg-[#ffe6b3];
+  @apply font-sans !bg-[#ffe6b3];
 }
 
 /* Hero Carousel Styles */
