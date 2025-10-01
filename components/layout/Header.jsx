@@ -174,9 +174,9 @@ export default function Header({ styles, cartCount = 0 }) {
         {/* cart & contact us */}
         <Box className="hidden items-center gap-4 md:flex">
           {/* cart btn */}
-          <IconButton component={Link} href="/cart" aria-label="Cart" className={styles.cartBtn}>
+          <button component={Link} href="/cart" aria-label="Cart" className={styles.cartBtn}>
             Cart <span className={styles.badge}>{cartCount}</span>
-          </IconButton>
+          </button>
 
           <Button
             variant="contained"
