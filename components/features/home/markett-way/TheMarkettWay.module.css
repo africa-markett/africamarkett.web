@@ -9,7 +9,7 @@
 }
 
 .mainTitle {
-  @apply mb-10 text-left text-5xl font-black tracking-tight text-brand-green;
+  @apply mb-10 text-left text-5xl mobile:mb-4 mobile:text-4xl font-black tracking-tight text-brand-green;
 }
 
 .cardsContainer {
@@ -65,7 +65,7 @@
 }
 
 .imageContainer {
-  @apply mb-2 !h-[400px] w-full overflow-hidden rounded-[4px] lg:h-80;
+  @apply mb-2 !h-[400px] mobile:!h-[350px] w-full overflow-hidden rounded-[4px] lg:h-80;
 }
 
 .cardImage {

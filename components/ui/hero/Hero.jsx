@@ -394,44 +394,105 @@ export default function Hero() {
 
   return (
     <div className={`${styles.heroCarouselContainer} hero-section`}>
-      <Swiper
-        direction="vertical"
-        slidesPerView={1}
-        spaceBetween={0}
-        effect={'fade'}
-        allowTouchMove={false}
-        touchStartPreventDefault={false}
-        simulateTouch={false}
-        touchRatio={0}
-        passiveListeners={true}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        modules={[Navigation, EffectFade, Autoplay, Pagination]}
-        className="hero-swiper"
-        style={{ height: '100%', touchAction: 'pan-y' }}
-      >
-        {heroSlides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div className={styles.heroSlideContainer}>
-              <HotspotImage hotspots={slide.hotspots} src={slide.image} />
-              <div className={styles.heroOverlay}>
-                <div className={styles.heroContent}>
-                  <h1 className={styles.heroTitle}>{slide.title}</h1>
-                  <button className={styles.heroButton} onClick={handleMarketplaceClick}>
-                    {slide.buttonText}
+      {/* Desktop Version */}
+      <div className={styles.desktopHero}>
+        <Swiper
+          direction="vertical"
+          slidesPerView={1}
+          spaceBetween={0}
+          effect={'fade'}
+          allowTouchMove={false}
+          touchStartPreventDefault={false}
+          simulateTouch={false}
+          touchRatio={0}
+          passiveListeners={true}
+          pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          modules={[Navigation, EffectFade, Autoplay, Pagination]}
+          className="hero-swiper"
+          style={{ height: '100%', touchAction: 'pan-y' }}
+        >
+          {heroSlides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className={styles.heroSlideContainer}>
+                <HotspotImage hotspots={slide.hotspots} src={slide.image} />
+                <div className={styles.heroOverlay}>
+                  <div className={styles.heroContent}>
+                    <h1 className={styles.heroTitle}>{slide.title}</h1>
+                    <button className={styles.heroButton} onClick={handleMarketplaceClick}>
+                      {slide.buttonText}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Mobile Version */}
+      <div className={styles.mobileHero}>
+        <Swiper
+          direction="horizontal"
+          slidesPerView={1}
+          spaceBetween={0}
+          effect={'fade'}
+          allowTouchMove={true}
+          touchStartPreventDefault={false}
+          simulateTouch={true}
+          touchRatio={1}
+          passiveListeners={false}
+          pagination={{
+            clickable: true,
+            dynamicBullets: false,
+          }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          modules={[Navigation, EffectFade, Autoplay, Pagination]}
+          className={styles.mobileHeroSwiper}
+        >
+          {heroSlides.map((slide, index) => (
+            <SwiperSlide key={`mobile-${index}`}>
+              <div className={styles.mobileSlideContainer}>
+                <div className={styles.mobileImageContainer}>
+                  <img 
+                    src={slide.image} 
+                    alt={`African art slide ${index + 1}`}
+                    className={styles.mobileSlideImage}
+                  />
+                  <div className={styles.mobileImageOverlay} />
+                </div>
+                <div className={styles.mobileContentContainer}>
+                  <div className={styles.mobileCategoryTag}>
+                    Art & Collectibles
+                  </div>
+                  <h1 className={styles.mobileHeroTitle}>
+                    {slide.title === "Your one-stop shop for Africa's creativity." ? "The Monet Painting" :
+                     slide.title === 'Your Market for All Things Africa.' ? "African Elegance" :
+                     "Cultural Heritage"}
+                  </h1>
+                  <button 
+                    className={styles.mobileExploreButton} 
+                    onClick={handleMarketplaceClick}
+                  >
+                    <span>Explore Marketplace</span>
+                    
                   </button>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 }

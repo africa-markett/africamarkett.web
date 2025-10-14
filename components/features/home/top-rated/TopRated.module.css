@@ -3,6 +3,13 @@
   @apply   pt-[75px];
 }
 
+/* Hide on mobile - show mobile carousel instead */
+@media (max-width: 767px) {
+  .topRatedSection {
+    display: none;
+  }
+}
+
 .container {
   @apply w-full;
 }

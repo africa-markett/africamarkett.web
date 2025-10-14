@@ -1,6 +1,11 @@
+/* Desktop Header Wrapper - Hidden on mobile, visible on tablet and desktop */
+.desktopHeaderWrapper {
+  @apply !hidden md:!block;
+}
+
 /* Header */
 .header {
-  @apply border border-white/20 !bg-[#004C3F40] px-4 py-[21px] backdrop-blur-md hover:bg-[#004C3F40]/20 md:px-6 lg:px-[2%];
+  @apply border border-white/20 !bg-[#004C3F40] px-[2%] py-[21px] backdrop-blur-md hover:bg-[#004C3F40]/20;
   z-index: 1000;
 }
 
@@ -28,7 +33,73 @@
   @apply flex items-center justify-center rounded-md bg-brand-cream px-[10px] py-[5px] text-[14px] font-semibold text-brand-green;
 }
 .contactUsBtn {
-  @apply flex items-center gap-2 !rounded-full !bg-brand-cream !px-3 !py-2 !font-semibold !normal-case !text-brand-green hover:!bg-brand-gold/90 md:gap-3 md:!px-4 md:!py-3;
+  @apply flex items-center gap-3 rounded-full bg-brand-cream px-4 py-3 font-semibold text-brand-green no-underline transition-all hover:bg-brand-gold/90;
+}
+
+/* Tablet Menu Styles */
+.tabletCartBtn {
+  @apply relative flex h-12 w-12 items-center justify-center rounded-full bg-brand-cream/20 backdrop-blur-sm transition-all hover:bg-brand-cream/30;
+}
+
+.tabletBadge {
+  @apply absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-brand-cream text-xs font-bold text-brand-green;
+}
+
+.hamburgerBtn {
+  @apply !h-12 !w-12 !rounded-full !bg-brand-cream/20 !backdrop-blur-sm hover:!bg-brand-cream/30;
+}
+
+/* Drawer Styles */
+.drawer {
+  z-index: 1300 !important;
+}
+
+.drawerPaper {
+  @apply w-[320px] !bg-brand-green/95 backdrop-blur-md;
+}
+
+.drawerContent {
+  @apply flex h-full flex-col;
+}
+
+.drawerHeader {
+  @apply flex items-center justify-between px-6 py-5;
+}
+
+.closeBtn {
+  @apply !text-brand-cream hover:!text-brand-gold;
+}
+
+.drawerDivider {
+  @apply !border-brand-cream/20;
+}
+
+.drawerList {
+  @apply flex-1 px-4 py-2;
+}
+
+.drawerItem {
+  @apply !mb-2 !rounded-xl !px-4 !py-3 !text-brand-cream transition-all hover:!bg-brand-cream/10;
+}
+
+.drawerItemActive {
+  @apply !bg-brand-cream/20 !text-brand-gold;
+}
+
+.drawerItemText {
+  @apply !text-base !font-medium;
+}
+
+.drawerFooter {
+  @apply flex flex-col gap-3 p-6;
+}
+
+.drawerCartBtn {
+  @apply w-full rounded-lg border-2 border-brand-cream bg-transparent px-4 py-3 text-brand-cream transition-all hover:bg-brand-cream/10;
+}
+
+.drawerContactBtn {
+  @apply w-full rounded-full bg-brand-cream px-4 py-3 font-semibold text-brand-green transition-all hover:bg-brand-gold;
 }
 
 /* Footer Styles */
@@ -90,5 +161,5 @@
 }
 
 .footerTagline {
-  @apply text-lg font-semibold tracking-widest text-white;
+  @apply text-lg font-semibold tracking-widest text-white mobile:pb-8;
 }

@@ -1,0 +1,90 @@
+/* Mobile Home Header Container */
+.mobileHeaderContainer {
+  @apply  bg-brand-cream px-4 py-6 hidden mobile:block;
+}
+
+/* Welcome Section */
+.welcomeSection {
+  @apply mb-6 flex items-center justify-between  bg-brand-cream ;
+}
+
+.userInfo {
+  @apply flex items-center gap-3;
+}
+
+.userAvatar {
+  @apply h-14 w-14 rounded-full object-cover;
+}
+
+.welcomeText {
+  @apply flex flex-col;
+}
+
+.welcomeBack {
+  @apply text-xs font-normal text-brand-green;
+}
+
+.userName {
+  @apply text-lg font-semibold text-brand-green;
+  margin: 0;
+}
+
+.actionIcons {
+  @apply flex items-center gap-0 rounded-full bg-[#004C3F40] p-1;
+}
+
+.iconButton {
+  @apply !h-10 !w-10 !rounded-full hover:!bg-[#C8D5D2A0];
+  background: transparent !important;
+  position: relative;
+}
+
+.icon {
+  @apply text-brand-green;
+}
+
+/* Notification Dot */
+.notificationDot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  background-color: #004C3F;
+  border-radius: 50%;
+}
+
+/* Search Section */
+.searchSection {
+  @apply flex items-center gap-3;
+}
+
+.searchForm {
+  @apply flex-1;
+}
+
+.searchInput {
+  @apply w-full;
+}
+
+.inputField {
+  @apply !rounded-2xl !bg-[#FFF3DA] !py-3 !h-14 !text-sm !text-gray-700;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.inputField fieldset {
+  border: none;
+}
+
+.searchIcon {
+  @apply text-gray-500;
+}
+
+.filterButton {
+  @apply !h-14 !w-14 !flex-shrink-0 !rounded-2xl !bg-[#FFF3DA] hover:!bg-gray-50;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.filterButton svg {
+  @apply text-gray-700;
+}

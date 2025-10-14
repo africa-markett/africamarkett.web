@@ -1,23 +1,19 @@
-import { useState, useMemo, useEffect, Fragment } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import {
   AppBar,
   Toolbar,
-  IconButton,
-  Typography,
   Box,
   Drawer,
+  IconButton,
   List,
   ListItemButton,
   ListItemText,
   Divider,
-  Badge,
-  Button,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Image from 'next/image';
 
 const NAV_ITEMS = [
@@ -28,12 +24,10 @@ const NAV_ITEMS = [
 ];
 
 export default function Header({ styles, cartCount = 0 }) {
-  const [open, setOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
-
-  const toggle = (val) => () => setOpen(val);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const router = useRouter();
   const isActive = (href) => {
@@ -72,66 +66,12 @@ export default function Header({ styles, cartCount = 0 }) {
     };
   }, [lastScrollY]);
 
-  // For accessibility: trap focus order for the drawer list.
-  const drawerList = useMemo(
-    () => (
-      <Box
-        role="presentation"
-        className="flex h-full w-[88vw] max-w-sm flex-col bg-white"
-        onClick={toggle(false)}
-        onKeyDown={(e) => {
-          if (e.key === 'Escape') setOpen(false);
-        }}
-      >
-        <div className="flex justify-end px-4 py-3">
-          <IconButton aria-label="Close menu">
-            <CloseIcon />
-          </IconButton>
-        </div>
-
-        <Divider />
-
-        <List className="py-2">
-          {NAV_ITEMS.map((item) => (
-            <ListItemButton key={item.href} component={Link} href={item.href} className="py-3">
-              <ListItemText
-                primary={item.label}
-                primaryTypographyProps={{
-                  className: 'text-base font-medium text-ink',
-                }}
-              />
-            </ListItemButton>
-          ))}
-
-          {/* Cart (mobile) */}
-          <ListItemButton component={Link} href="/cart" className="py-3">
-            <ShoppingCartOutlinedIcon className="mr-3" />
-            <ListItemText
-              primary="Cart"
-              primaryTypographyProps={{
-                className: 'text-base font-medium text-ink',
-              }}
-            />
-            {cartCount > 0 && <Badge color="primary" badgeContent={cartCount} />}
-          </ListItemButton>
-        </List>
-
-        <div className="mt-auto p-4">
-          <Button
-            fullWidth
-            variant="contained"
-            color="primary"
-            component={Link}
-            href="/catalog"
-            className="!normal-case"
-          >
-            Explore Marketplace
-          </Button>
-        </div>
-      </Box>
-    ),
-    [cartCount],
-  );
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
 
   return (
     <AppBar
@@ -143,27 +83,26 @@ export default function Header({ styles, cartCount = 0 }) {
         transition: 'transform 0.3s ease-in-out',
       }}
     >
-      <Toolbar className="container mx-auto flex justify-between !px-4 lg:!px-[100px]">
+      <Toolbar className="container mx-auto flex justify-between px-4 md:px-6 lg:px-[100px]">
         {/* Logo */}
         <Image
           src="/logo.png"
           alt="Africa Markett Logo"
           width={150}
           height={50}
-          className="w-[120px] md:w-[150px]" // Responsive logo size
+          className="w-[120px] lg:w-[150px]"
         />
 
-        {/* Desktop Nav */}
-        <Box className="hidden items-center gap-8 md:flex lg:gap-24">
+        {/* Desktop Nav - Hidden on tablet */}
+        <Box className="hidden items-center gap-24 lg:flex">
           {NAV_ITEMS.map((item) => (
             <Box key={item.href} className={styles.navItems}>
-              <Typography
-                component={Link}
+              <Link
                 href={item.href}
                 className={`${styles.navLink} ${isActive(item.href) ? styles.navLinkActive : ''}`}
               >
                 {item.label}
-              </Typography>
+              </Link>
               {item.icon && (
                 <Image src={item.icon} alt={item.label + ' icon'} width={16} height={16} />
               )}
@@ -171,43 +110,136 @@ export default function Header({ styles, cartCount = 0 }) {
           ))}
         </Box>
 
-        {/* cart & contact us */}
-        <Box className="hidden items-center gap-4 md:flex">
+        {/* Desktop cart & contact us - Hidden on tablet */}
+        <Box className="hidden items-center gap-4 lg:flex">
           {/* cart btn */}
-          <button component={Link} href="/cart" aria-label="Cart" className={styles.cartBtn}>
+          <Link href="/cart" aria-label="Cart" className={styles.cartBtn}>
             Cart <span className={styles.badge}>{cartCount}</span>
-          </button>
+          </Link>
 
-          <Button
-            variant="contained"
-            component={Link}
-            href="/contact-us"
-            className={styles.contactUsBtn}
-          >
+          <Link href="/contact-us" className={styles.contactUsBtn}>
             <Image
               src="/assests/icons/person-icon.png"
               alt="Contact us icon"
               width={16}
               height={16}
             />
-            <span className="hidden sm:inline">Contact us</span>
-          </Button>
+            Contact us
+          </Link>
         </Box>
 
-        {/* Mobile toggles */}
-        <Box className="flex items-center gap-1 md:hidden">
-          {/* cart btn */}
-          <IconButton component={Link} href="/cart" aria-label="Cart" className={styles.cartBtn}>
-            Cart <span className={styles.badge}>{cartCount}</span>
-          </IconButton>
-          <IconButton aria-label="Open menu" onClick={toggle(true)} edge="end">
-            <MenuIcon className="text-brand-cream" />
+        {/* Tablet Menu - Visible between md and lg */}
+        <Box className="hidden items-center gap-4 md:flex lg:hidden">
+          {/* Cart Button for Tablet */}
+          <Link href="/cart" className={styles.tabletCartBtn}>
+            <Image
+              src="/assests/icons/catlog-icon.png"
+              alt="Cart"
+              width={24}
+              height={24}
+            />
+            {cartCount > 0 && <span className={styles.tabletBadge}>{cartCount}</span>}
+          </Link>
+
+          {/* Hamburger Menu */}
+          <IconButton
+            edge="end"
+            aria-label="menu"
+            onClick={toggleDrawer(true)}
+            className={styles.hamburgerBtn}
+          >
+            <MenuIcon className="text-brand-cream" fontSize="large" />
           </IconButton>
         </Box>
       </Toolbar>
 
-      <Drawer anchor="right" open={open} onClose={toggle(false)}>
-        {drawerList}
+      {/* Drawer for Tablet */}
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+        className={styles.drawer}
+        PaperProps={{
+          className: styles.drawerPaper,
+        }}
+      >
+        <Box className={styles.drawerContent} role="presentation">
+          {/* Drawer Header */}
+          <Box className={styles.drawerHeader}>
+            <Image
+              src="/logo.png"
+              alt="Africa Markett"
+              width={120}
+              height={40}
+            />
+            <IconButton onClick={toggleDrawer(false)} className={styles.closeBtn}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+
+          <Divider className={styles.drawerDivider} />
+
+          {/* Navigation Items */}
+          <List className={styles.drawerList}>
+            {NAV_ITEMS.map((item) => (
+              <ListItemButton
+                key={item.href}
+                onClick={() => {
+                  router.push(item.href);
+                  toggleDrawer(false)();
+                }}
+                className={`${styles.drawerItem} ${isActive(item.href) ? styles.drawerItemActive : ''}`}
+              >
+                {item.icon && (
+                  <Image 
+                    src={item.icon} 
+                    alt={item.label} 
+                    width={20} 
+                    height={20} 
+                    className="mr-3"
+                  />
+                )}
+                <ListItemText 
+                  primary={item.label}
+                  primaryTypographyProps={{
+                    className: styles.drawerItemText,
+                  }}
+                />
+              </ListItemButton>
+            ))}
+          </List>
+
+          <Divider className={styles.drawerDivider} />
+
+          {/* Drawer Footer Actions */}
+          <Box className={styles.drawerFooter}>
+            <button
+              onClick={() => {
+                router.push('/cart');
+                toggleDrawer(false)();
+              }}
+              className={styles.drawerCartBtn}
+            >
+              View Cart {cartCount > 0 && `(${cartCount})`}
+            </button>
+            <button
+              onClick={() => {
+                router.push('/contact-us');
+                toggleDrawer(false)();
+              }}
+              className={styles.drawerContactBtn}
+            >
+              <Image
+                src="/assests/icons/person-icon.png"
+                alt="Contact us"
+                width={16}
+                height={16}
+                className="mr-2"
+              />
+              Contact us
+            </button>
+          </Box>
+        </Box>
       </Drawer>
     </AppBar>
   );

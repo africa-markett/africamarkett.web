@@ -9,7 +9,7 @@
 }
 
 .header {
-  @apply mb-12 text-center;
+  @apply mb-12 text-center ;
 }
 
 .subtitle {

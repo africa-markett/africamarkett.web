@@ -27,15 +27,103 @@
 }
 
 .heroCarouselContainer {
-  @apply h-[100dvh] mobile:h-[85dvh];
+  @apply h-[100dvh] mobile:h-fit tablet:h-[650px] ;
 }
 
 .heroSwiper {
   @apply h-full;
 }
 
-/* Mobile specific adjustments */
+/* Desktop and Mobile Layout Control */
+.desktopHero {
+  @apply block h-full mobile:!hidden tablet:!block;
+}
+
+.mobileHero {
+  @apply laptop:!hidden tablet:!hidden ;
+}
+
+/* Mobile Hero Styles */
+.mobileHeroSwiper {
+  @apply !h-[340px] relative;
+}
+
+.mobileSlideContainer {
+  @apply relative h-full flex flex-col;
+}
+
+.mobileImageContainer {
+  @apply relative flex-1 min-h-0 overflow-hidden;
+}
+
+.mobileSlideImage {
+  @apply w-full h-full object-cover object-center;
+}
+
+/* .mobileImageOverlay {
+  @apply absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10;
+} */
+
+.mobileContentContainer {
+  @apply absolute bottom-0 left-0 right-0 p-6 !pb-12 text-white z-10 max-w-[210px];
+
+}
+
+.mobileCategoryTag {
+  @apply inline-block  text-brand-gold text-xs font-medium  mb-3;
+}
+
+.mobileHeroTitle {
+  @apply text-3xl font-medium mb-6 leading-tight text-brand-cream;
+  
+}
+
+.mobileExploreButton {
+  @apply inline-flex items-center gap-2 !bg-[#004C3F40] backdrop-blur-md border border-white/20 text-white px-6 py-4 rounded-[4px] font-medium text-sm transition-all duration-300 ease-out  hover:border-white/30 active:scale-95;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobileExploreButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Pagination Styles for Mobile */
+.mobileHero :global(.swiper-pagination) {
+  bottom: 19px !important;
+  left: 25px !important;
+  right: auto !important;
+  width: auto !important;
+  text-align: left !important;
+  z-index: 20;
+}
+
+.mobileHero :global(.swiper-pagination-bullet) {
+  width: 4px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  margin: 0 4px !important;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.mobileHero :global(.swiper-pagination-bullet-active) {
+  @apply bg-brand-green;
+  width: 12px;
+  border-radius: 4px;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
+  .desktopHero {
+    @apply hidden;
+  }
+
+  .mobileHero {
+    @apply block;
+  }
+
   .heroOverlay {
     @apply p-6;
   }
@@ -50,6 +138,18 @@
 }
 
 @media (max-width: 480px) {
+  .mobileContentContainer {
+    @apply p-4 pb-6;
+  }
+
+  .mobileHeroTitle {
+    @apply text-2xl mb-4;
+  }
+
+  .mobileExploreButton {
+    @apply px-5 py-3 text-xs;
+  }
+
   .heroOverlay {
     @apply p-4;
   }
@@ -60,5 +160,31 @@
 
   .heroButton {
     @apply px-4 py-2 text-xs;
+  }
+}
+
+/* Enhanced Mobile Styles for Premium Look */
+@media (max-width: 768px) {
+  .mobileSlideContainer {
+    @apply relative overflow-hidden;
+  }
+
+  .mobileImageContainer::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent;
+    pointer-events: none;
+  }
+
+ 
+
+  .mobileHeroTitle {
+    @apply drop-shadow-2xl;
+    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.9);
+  }
+
+  .mobileExploreButton {
+    @apply backdrop-blur-xl bg-white/15;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   }
 }

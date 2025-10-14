@@ -119,7 +119,7 @@ const MirrorScrollLookbook = () => {
   );
 
   return (
-    <section ref={sectionRef} className="limited_editions">
+    <section ref={sectionRef} className="limited_editions hidden md:block">
       {/* Header content */}
       <div className={styles.headerContainer}>
         <h2 className={styles.headerTitle}>

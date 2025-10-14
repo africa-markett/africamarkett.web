@@ -1,7 +1,7 @@
 /* Newsletter.module.css */
 
 .container {
-  @apply relative min-h-screen overflow-hidden mb-24;
+  @apply relative min-h-screen  mobile:!min-h-[480px] overflow-hidden mb-24 mobile:mb-0;
 }
 
 .backgroundImage {
@@ -25,11 +25,11 @@
 }
 
 .title {
-  @apply mb-6 text-[43px] font-black leading-normal text-[#f5ffff];
+  @apply mb-6 !text-[43px] mobile:!text-[25px] mobile:text-center font-black leading-normal text-[#f5ffff];
 }
 
 .description {
-  @apply mb-8 text-[19px] font-medium leading-relaxed text-[#f5ffff];
+  @apply mb-8 text-[19px] font-medium leading-relaxed mobile:text-center text-[#f5ffff];
 }
 
 .highlight {
@@ -41,12 +41,12 @@
 }
 
 .emailInput {
-  @apply w-full rounded-full border-none py-6 pl-8 pr-52 text-[14px] placeholder:text-[13px] placeholder:text-brand-green text-brand-green outline-none bg-brand-cream;
+  @apply w-full rounded-full border-none py-6 mobile:py-3 pl-8 pr-52 text-[14px] placeholder:text-[13px] placeholder:text-brand-green text-brand-green outline-none bg-brand-cream;
 }
 
 
 .submitButton {
-  @apply absolute bottom-1 right-1 top-1 whitespace-nowrap rounded-full bg-brand-green px-8 text-[13px] font-normal text-brand-cream transition-all duration-300 hover:bg-opacity-90;
+  @apply absolute bottom-1 right-1 top-1 whitespace-nowrap rounded-full bg-brand-green px-8 mobile:px-4 text-[13px] font-normal text-brand-cream transition-all duration-300 hover:bg-opacity-90;
 }
 
 /* Responsive adjustments */

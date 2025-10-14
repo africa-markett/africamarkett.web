@@ -1,0 +1,32 @@
+/* Mobile Bottom Navigation Container */
+.bottomNav {
+  @apply bg-brand-cream !shadow-none;
+
+}
+
+.bottomNavigation {
+  @apply !bg-brand-cream py-4;
+  min-height: 60px;
+}
+
+/* Navigation Action Items */
+/* .navAction {
+  @apply !text-[#737373] text-[9px];
+  flex: 1;
+}
+
+.navAction.Mui-selected {
+  color: #004C3F !important;
+} */
+
+/* Cart Icon with Badge */
+.cartIconWrapper {
+  @apply relative;
+}
+.cartIconWrapper img{
+  @apply w-6 h-6 object-contain;
+}
+
+.cartBadge {
+  @apply absolute -right-2 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-brand-green text-[10px] font-semibold text-white;
+}
