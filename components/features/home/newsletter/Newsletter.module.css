@@ -41,7 +41,7 @@
 }
 
 .emailInput {
-  @apply w-full rounded-full border-none py-6 mobile:py-3 pl-8 pr-52 text-[14px] placeholder:text-[13px] placeholder:text-brand-green text-brand-green outline-none bg-brand-cream;
+  @apply w-full rounded-full border-none py-6 mobile:py-3 pl-8 pr-52 mobile:pr-32 text-[14px] placeholder:text-[13px] placeholder:text-brand-green text-brand-green outline-none bg-brand-cream;
 }
 
 
