@@ -15,7 +15,7 @@ export default function ProductCard({ product, formatPrice }) {
   const priceFormatter = formatPrice || defaultFormatPrice;
 
   return (
-    <div className={styles.productCard}>
+    <Link href={`/products/${product.id}`} className={styles.productCard}>
       <div className={styles.imageContainer}>
         <Image
           src={product.image}
@@ -24,9 +24,7 @@ export default function ProductCard({ product, formatPrice }) {
           className={styles.productImage}
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
         />
-        <button className={styles.shopNowBtn}>
-          <Link href={`/products/${product.id}`}>Shop now</Link>
-        </button>
+        <button className={styles.shopNowBtn}>Shop now</button>
       </div>
 
       <div className={styles.productInfo}>
@@ -38,6 +36,6 @@ export default function ProductCard({ product, formatPrice }) {
           <p className={styles.price}>{priceFormatter(product.price)}</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

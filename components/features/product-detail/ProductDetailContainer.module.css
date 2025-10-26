@@ -1,0 +1,213 @@
+.pageWrapper {
+  @apply min-h-screen bg-white;
+}
+
+.heroSection {
+  @apply relative w-full bg-gray-100;
+  height: 50vh;
+  min-height: 400px;
+}
+
+.backButton {
+  @apply absolute top-4 left-4 z-20 w-10 h-10 flex items-center justify-center bg-[#004c3f4d]  rounded-full text-brand-cream  transition-all duration-200;
+}
+
+.contentSection {
+  @apply bg-brand-cream rounded-t-3xl -mt-6 relative z-10 px-4 pt-6  overflow-x-hidden;
+}
+
+.paginationDots {
+  @apply flex items-center justify-center gap-1.5 mb-6;
+}
+
+.dot {
+  @apply w-2 h-2 rounded-full bg-[#004C3F40] cursor-pointer transition-all duration-300;
+}
+
+.dotActive {
+  @apply bg-brand-green w-6;
+}
+
+.productHeader {
+  @apply flex items-start justify-between mb-6 gap-4;
+}
+
+.headerLeft {
+  @apply flex-1;
+}
+
+.categoryBadge {
+  @apply inline-flex items-center gap-1.5 text-brand-green text-[9px] font-medium mb-2;
+}
+
+.categoryIcon {
+  @apply w-8 h-8 object-contain bg-[#004C3F1A] p-1 rounded-full flex items-center justify-center;
+}
+
+.productTitle {
+  @apply text-[13px] font-bold text-brand-green;
+}
+
+.priceTag {
+  @apply text-[16px] font-black text-brand-green flex-shrink-0;
+}
+
+.tabsWrapper {
+  @apply mb-6;
+}
+
+.sectionTitle {
+  @apply text-sm font-semibold text-gray-900 mb-3;
+}
+
+.surfaceSection {
+  @apply mb-6;
+}
+
+.surfaceValue {
+  @apply text-sm text-gray-700;
+}
+
+
+
+/* Loading State - Professional Skeleton */
+.loadingContainer {
+  @apply bg-white min-h-screen;
+}
+
+/* Skeleton Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeletonImage {
+  @apply w-full h-full bg-gray-200;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #e0e0e0 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.skeletonDot {
+  @apply w-2 h-2 rounded-full bg-gray-300;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 0%,
+    #f0f0f0 20%,
+    #e0e0e0 40%,
+    #e0e0e0 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.skeletonBadge {
+  @apply h-4 w-20 rounded-full mb-2 bg-gray-300;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 0%,
+    #f0f0f0 20%,
+    #e0e0e0 40%,
+    #e0e0e0 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.skeletonTitle {
+  @apply h-8 w-48 rounded-lg mb-2 bg-gray-300;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 0%,
+    #f0f0f0 20%,
+    #e0e0e0 40%,
+    #e0e0e0 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.skeletonPrice {
+  @apply h-8 w-32 rounded-lg bg-gray-300;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 0%,
+    #f0f0f0 20%,
+    #e0e0e0 40%,
+    #e0e0e0 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.productHeaderSkeleton {
+  @apply flex items-start justify-between mb-6 gap-4;
+}
+
+.headerLeftSkeleton {
+  @apply flex-1;
+}
+
+.tabsSkeleton {
+  @apply mb-6;
+}
+
+.tabButtonsSkeleton {
+  @apply flex gap-2 mb-4 pb-4 border-b border-gray-200;
+}
+
+.skeletonTab {
+  @apply h-10 w-24 rounded-full bg-gray-300;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 0%,
+    #f0f0f0 20%,
+    #e0e0e0 40%,
+    #e0e0e0 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.tabContentSkeleton {
+  @apply space-y-3;
+}
+
+.skeletonLine {
+  @apply h-4 rounded-lg bg-gray-300 w-full;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 0%,
+    #f0f0f0 20%,
+    #e0e0e0 40%,
+    #e0e0e0 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Error State */
+.errorContainer {
+  @apply flex flex-col items-center justify-center min-h-[400px] gap-6;
+}
+
+.errorTitle {
+  @apply text-2xl font-bold text-gray-700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .productGrid {
+    @apply gap-4;
+  }
+}

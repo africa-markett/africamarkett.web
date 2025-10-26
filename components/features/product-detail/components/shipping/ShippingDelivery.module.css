@@ -1,0 +1,30 @@
+.shippingSection{
+    @apply mt-2;
+}
+.deliveryTitle{
+  @apply text-[11px] font-[500] text-brand-green mb-2;
+
+}
+.shippingCard {
+  @apply flex items-start gap-4 border-[1px] border-[#737373] border-opacity-20 rounded-lg p-4;
+}
+
+.iconWrapper {
+  @apply w-12 h-12 flex items-center justify-center bg-brand-green text-white rounded-lg flex-shrink-0;
+}
+
+.icon {
+  @apply w-6 h-6 object-contain;
+}
+
+.shippingInfo {
+  @apply flex-1;
+}
+
+.shippingTitle {
+  @apply text-[13px] font-[500] text-brand-green mb-2;
+}
+
+.shippingDescription {
+  @apply text-[9px] text-[#737373];
+}

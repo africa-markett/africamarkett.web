@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef } from 'react';
+import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useMediaQuery, useTheme } from '@mui/material';
@@ -137,9 +138,9 @@ const MirrorScrollLookbook = () => {
             <div className={styles.cardOverlay}>
               <div className={styles.cardContent}>
                 <div className={styles.cardInner}>
-                  <a href="/catalog" className={styles.cardLink}>
+                  <Link href="/products" className={styles.cardLink}>
                     <div className={styles.shopButton}>Shop Now</div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className={styles.cardImage}>
@@ -196,9 +197,9 @@ const Card = ({ image, link }) => (
   <div className={styles.cardOverlay}>
     <div className={styles.cardContentDesktop}>
       <div className={styles.cardInner}>
-        <a href="/catalog" className={styles.cardLink}>
+        <Link href="/products" className={styles.cardLink}>
           <div className={styles.shopButton}>Shop Now</div>
-        </a>
+        </Link>
       </div>
     </div>
     <div className={styles.cardImage}>

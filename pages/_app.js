@@ -17,6 +17,9 @@ export default function MyApp(props) {
 
   // Determine if this is an admin page
   const isAdminPage = router.pathname.startsWith('/admin');
+  
+  // Determine if this is a product detail page
+  const isProductDetailPage = router.pathname === '/products/[id]';
 
   // Choose the appropriate layout
   const LayoutComponent = isAdminPage ? AdminLayout : Layout;
@@ -30,7 +33,7 @@ export default function MyApp(props) {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <LayoutComponent> 
+        <LayoutComponent hideMobileNav={isProductDetailPage}> 
           <Component {...pageProps} />
         </LayoutComponent>
       </ThemeProvider>

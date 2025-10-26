@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from './ProductSpotlight.module.css';
 
 const ProductSpotlight = () => {
@@ -12,7 +13,9 @@ const ProductSpotlight = () => {
               From artisan hands to your home: this week's cultural treasure, crafted with heritage
               and priced for you.
             </p>
-            <button className={styles.shopButton}>Shop now</button>
+            <Link href="/products">
+              <button className={styles.shopButton}>Shop now</button>
+            </Link>
           </div>
         </div>
 

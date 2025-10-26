@@ -1,0 +1,25 @@
+.bottomBar {
+  @apply fixed bottom-0 left-0 right-0 bg-brand-cream shadow-brand-greenLight shadow-md   z-50 px-4 py-4;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.container {
+  @apply flex items-center gap-3 max-w-7xl mx-auto;
+}
+
+.cartButton {
+  @apply w-14 h-14 flex-shrink-0 flex items-center justify-center bg-[#004C3F40] text-brand-green rounded-full hover:bg-brand-green hover:text-white transition-all duration-200 shadow-sm;
+}
+
+.buyButton {
+  @apply flex-1 bg-brand-green text-brand-cream py-3.5 px-6 rounded-full font-semibold text-base hover:bg-opacity-90 transition-all duration-200;
+}

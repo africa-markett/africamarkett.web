@@ -1,0 +1,13 @@
+.ratingOverviewContainer {
+  @apply text-center   flex items-center justify-between;
+}
+.ratingOverview {
+  @apply flex items-center gap-[8px];
+}
+.ratingScore {
+  @apply !text-[32px] !font-[800] text-brand-green ;
+}
+
+.ratingText {
+  @apply !text-[11px] text-brand-green !font-normal;
+}

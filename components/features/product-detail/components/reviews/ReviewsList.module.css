@@ -1,0 +1,11 @@
+.reviewsList {
+  @apply space-y-0;
+}
+
+.emptyState {
+  @apply text-center py-8;
+}
+
+.emptyText {
+  @apply text-brand-green text-sm;
+}

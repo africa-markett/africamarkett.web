@@ -1,0 +1,35 @@
+.returnSection {
+  @apply mt-6;
+}
+
+.returnTitle {
+  @apply text-[11px] font-[500] text-brand-green mb-2;
+}
+
+.returnCard {
+  @apply flex items-start gap-4  border-[1px] border-[#737373] border-opacity-20 rounded-lg p-4;
+}
+
+.iconWrapper {
+  @apply w-12 h-12 flex items-center justify-center bg-brand-green text-white rounded-lg flex-shrink-0;
+}
+
+.icon {
+  @apply w-6 h-6 object-contain;
+}
+
+.returnInfo {
+  @apply flex-1;
+}
+
+.returnSubtitle {
+   @apply text-[13px] font-[500] text-brand-green mb-2;
+}
+
+.returnDescription {
+  @apply text-[9px] text-[#737373];
+}
+
+.returnLink {
+  @apply text-brand-green font-semibold underline cursor-pointer;
+}

@@ -75,7 +75,8 @@ export default function MobileBestSellerCarousel({ products, title = "Best Selle
                     className={styles.productImage}
                     sizes="(max-width: 640px) 50vw, 33vw"
                     priority={product.id <= 3}
-                  />
+                    />
+                   
                   {/* Wishlist Heart Icon */}
                   <button className={styles.wishlistBtn} aria-label="Add to wishlist">
                     <svg

@@ -1,0 +1,214 @@
+.modalOverlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end md:items-center justify-center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalWrapper {
+  @apply bg-brand-cream rounded-t-3xl md:rounded-3xl w-full md:max-w-md max-h-[85vh] flex flex-col relative;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modalContent {
+  @apply overflow-y-auto p-6 pt-2 pb-0 flex-1;
+}
+
+.dragHandle {
+  @apply w-12 h-1 bg-[#737373] rounded-full mx-auto mb-4;
+}
+
+.modalTitle {
+  @apply text-[16px] font-[500] text-brand-green mb-6;
+}
+
+.section {
+  @apply mb-6;
+}
+
+.sectionTitle {
+  @apply text-[13px] font-[500] text-brand-green mb-3;
+}
+
+/* Quantity Control */
+.quantityControl {
+  @apply flex items-center justify-between  border-[0.6px] border-[#737373] rounded-lg p-3;
+}
+
+.quantityLabel {
+  @apply text-[13px] font-normal text-brand-green;
+}
+
+.quantityButtons {
+  @apply flex items-center gap-4;
+}
+
+.quantityBtn {
+  @apply w-[22px] h-[22px] flex items-center justify-center bg-[#FFF3DA] rounded-full text-brand-green font-medium text-[14px]  hover:bg-brand-green hover:text-white transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.quantityValue {
+  @apply min-w-[2ch] text-center text-[12px] font-medium text-brand-green;
+}
+
+/* Payment Methods */
+.paymentMethods {
+  @apply space-y-3;
+}
+
+.paymentCard {
+  @apply flex items-center gap-3 border-[#737373] border-[0.6px] rounded-lg p-4 w-full text-left transition-all duration-200 hover:border-brand-green cursor-pointer;
+}
+
+
+
+.paymentIcon {
+  @apply w-12 h-12 flex p-3 items-center justify-center bg-brand-green text-white rounded-lg flex-shrink-0 overflow-hidden;
+}
+
+.paymentIcon img {
+  @apply w-full h-full object-cover;
+}
+
+.paymentInfo {
+  @apply flex-1 min-w-0;
+}
+
+.paymentName {
+  @apply text-[13px] font-medium text-brand-green mb-1;
+}
+
+.paymentDescription {
+  @apply text-[9px] text-[#737373] line-clamp-2;
+}
+
+.paymentRadio {
+  @apply flex-shrink-0 ml-2;
+}
+
+.paymentRadio input[type='radio'] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    accent-color: var(--brand-green);
+    background-color: transparent !important;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #737373;
+    border-radius: 50%;
+    outline: none;
+}
+
+.paymentRadio input[type='radio']:focus {
+    outline: 1px solid var(--brand-green);
+    outline-offset: 1px;
+}
+
+.paymentRadio input[type='radio']:checked {
+    background-color: var(--brand-green) !important;
+    background-image: radial-gradient(circle, var(--brand-green) 40%, transparent 40%);
+    border-color: var(--brand-green);
+    box-shadow: inset 0 0 0 2px white, inset 0 0 0 4px var(--brand-green);
+     border: 2px solid
+}
+
+/* Delivery Location */
+.deliveryButton {
+  @apply flex items-center gap-3  border-[#737373] border-[0.6px] rounded-lg p-4 w-full text-left transition-all duration-200 hover:border-brand-green cursor-pointer;
+}
+
+.deliveryButtonActive {
+  @apply border-brand-green border-[2px];
+}
+
+.deliveryIcon {
+  @apply w-12 h-12 p-3 flex items-center justify-center bg-brand-green text-white rounded-lg flex-shrink-0 overflow-hidden;
+}
+
+.deliveryIcon img {
+  @apply w-full h-full object-cover;
+}
+
+.deliveryInfo {
+  @apply flex-1 min-w-0;
+}
+
+.deliveryTitle {
+  @apply text-[13px] font-medium text-brand-green mb-1;
+}
+
+.deliveryDescription {
+  @apply text-[9px] text-[#737373] line-clamp-2;
+}
+
+.deliveryArrow {
+  @apply flex-shrink-0 text-gray-400 w-5 h-5 flex items-center justify-center ml-2;
+}
+
+.deliveryArrow svg {
+  @apply w-full h-full;
+}
+
+/* Order Details */
+.orderDetails {
+  @apply  space-y-3;
+}
+
+.orderDetailRow {
+  @apply flex items-center justify-between;
+}
+
+.orderDetailLabel {
+  @apply text-[11px] font-normal text-brand-green;
+}
+
+.orderDetailValue {
+  @apply text-[11px] font-medium text-brand-green;
+}
+
+.orderDetailRowTotal {
+  @apply flex items-center justify-between pt-2 ;
+}
+
+.orderDetailLabelTotal {
+  @apply text-base font-normal text-brand-green;
+}
+
+.orderDetailValueTotal {
+  @apply text-[13px] font-medium text-brand-green;
+}
+
+/* Bottom Spacer */
+.bottomSpacer {
+  @apply h-10;
+}
+
+/* Pay Button Bar (Fixed at bottom) */
+.payButtonBar {
+  @apply sticky bottom-0 left-0 right-0 bg-brand-cream  p-4 pt-3 shadow-brand-greenLight shadow-md;
+}
+
+/* Pay Button */
+.payButton {
+  @apply w-full bg-brand-green text-brand-cream py-4 px-6 rounded-full font-medium text-base hover:bg-opacity-90 transition-all duration-200 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.payButton:hover:not(:disabled) {
+  @apply bg-opacity-80;
+}

@@ -1,0 +1,33 @@
+.reviewItem {
+  @apply py-4;
+}
+
+
+
+.reviewHeader {
+  @apply flex items-center gap-3 mb-3;
+}
+
+.reviewerAvatar {
+  @apply w-[36px] h-[36px] flex items-center justify-center bg-gray-200 rounded-full text-lg flex-shrink-0 overflow-hidden;
+}
+
+.avatarImage {
+  @apply w-full h-full object-cover;
+}
+
+.reviewerInfo {
+  @apply flex-1;
+}
+
+.reviewerName {
+  @apply text-[11px] font-[500] text-brand-green;
+}
+
+.reviewDate {
+  @apply text-[9px] text-brand-green;
+}
+
+.reviewText {
+  @apply text-[11px] text-brand-green leading-relaxed;
+}

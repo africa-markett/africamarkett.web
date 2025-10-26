@@ -1,6 +1,14 @@
 /* Product Card */
 .productCard {
   @apply flex h-full flex-col mobile:w-[250px] !w-full  bg-[#FFF3DA] shadow-sm  rounded-[2px];
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.productCard:hover {
+  @apply shadow-md;
+  transition: box-shadow 0.3s ease;
 }
 
 

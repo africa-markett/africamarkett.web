@@ -1,0 +1,46 @@
+.dimensionsSection {
+  @apply mb-6;
+}
+
+.sectionTitle {
+  @apply text-[11px] font-semibold text-brand-green mb-3;
+}
+
+.dimensionsScroll {
+  @apply flex gap-3 overflow-x-auto pb-2;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.dimensionsScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.dimensionCard {
+  @apply flex-shrink-0 flex flex-col items-start justify-between  py-3 border-[1px] border-brand-green rounded-[8px] transition-all duration-200 cursor-pointer hover:border-brand-green;
+  min-width: 84px;
+  min-height: 88px;
+}
+
+.dimensionCardActive {
+  @apply border-brand-green border-[1.5px] bg-brand-green bg-opacity-5;
+}
+
+.dimensionSize {
+  @apply text-[9px] font-bold text-brand-green mb-1 px-3;
+}
+.line {
+  @apply w-full border-t border-brand-green my-1;
+}
+
+.dimensionPrice {
+  @apply text-[11px] font-medium text-brand-green mb-1 px-3;
+}
+
+.dimensionStock {
+  @apply text-[7px] text-brand-green mb-1 px-3;
+}
+
+.orderNow {
+  @apply text-[10px] text-brand-green font-medium lowercase px-3;
+}

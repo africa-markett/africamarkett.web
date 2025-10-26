@@ -1,0 +1,22 @@
+.galleryContainer {
+  @apply w-full h-[430px] relative overflow-hidden;
+}
+
+.mainImageWrapper {
+  @apply w-full h-[430px] overflow-hidden;
+}
+
+.imageTrack {
+  @apply flex h-full;
+  will-change: transform;
+}
+
+.mainImage {
+  @apply relative w-full h-full flex-shrink-0 bg-gray-100;
+}
+
+.image {
+  @apply object-cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}

@@ -1,0 +1,53 @@
+.tabsContainer {
+  @apply w-full bg-transparent;
+}
+
+.tabHeaders {
+ @apply flex bg-brand-paper rounded-full justify-between overflow-x-auto gap-0 ;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tabHeaders::-webkit-scrollbar {
+  display: none;
+}
+
+.tabButton {
+  @apply !p-3  text-center !text-[10px] !font-normal text-gray-700 bg-transparent transition-all duration-200 rounded-full whitespace-nowrap flex-shrink-0 border-none;
+}
+
+.tabButtonActive {
+  @apply text-white bg-brand-green font-semibold;
+}
+
+.tabContent {
+  @apply py-6 !px-0;
+}
+
+.productDetailsContent {
+  @apply space-y-6;
+}
+
+.descriptionContent {
+  @apply text-gray-700 leading-relaxed text-sm;
+}
+
+/* Shipping Content */
+.shippingContent {
+  @apply space-y-6;
+}
+
+/* Reviews Content */
+.reviewsContent {
+  @apply space-y-4;
+}
+
+@media (max-width: 640px) {
+  .tabButton {
+    @apply py-3 px-3 text-sm;
+  }
+
+  .tabContent {
+    @apply p-4;
+  }
+}

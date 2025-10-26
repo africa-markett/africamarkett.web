@@ -4,7 +4,7 @@ import Header from './Header';
 import MobileBottomNav from '../ui/mobile/mobile-bottom-nav/MobileBottomNav';
 import styles from './Layout.module.css'
 
-export default function Layout({ children, cartCount = 0 }) {
+export default function Layout({ children, cartCount = 0, hideMobileNav = false }) {
 
   return (
     <div className="">
@@ -13,12 +13,12 @@ export default function Layout({ children, cartCount = 0 }) {
         <Header styles={styles} cartCount={cartCount} />
       </div>
 
-      <main className="flex-1 pb-20 md:pb-0">{children}</main>
+      <main className={`flex-1 md:pb-0 ${hideMobileNav ? 'pb-0' : 'pb-20'}`}>{children}</main>
       
       <Footer styles={styles} />
       
       {/* Mobile Bottom Navigation - Hidden on desktop */}
-      <MobileBottomNav cartCount={cartCount} />
+      {!hideMobileNav && <MobileBottomNav cartCount={cartCount} />}
     </div>
   );
 }

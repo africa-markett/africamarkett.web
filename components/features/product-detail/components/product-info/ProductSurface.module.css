@@ -1,0 +1,25 @@
+.surfaceSection {
+  @apply mb-6;
+}
+
+.sectionTitle {
+  @apply text-[11px] font-semibold text-brand-green mb-3;
+}
+
+.surfaceGrid {
+  @apply flex bg-brand-paper rounded-full justify-between overflow-x-auto gap-0 p-1;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.surfaceGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.surfaceButton {
+  @apply !p-3 max-w-full !px-6 text-center !text-[10px] !font-normal text-gray-700 bg-transparent transition-all duration-200 rounded-full whitespace-nowrap flex-shrink-0 border-none;
+}
+
+.surfaceButtonActive {
+  @apply bg-brand-green text-white font-semibold;
+}

@@ -1,0 +1,59 @@
+.modalOverlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-50 flex items-end md:items-center justify-center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modalContent {
+  @apply bg-brand-cream rounded-t-3xl md:rounded-3xl w-full md:max-w-md p-8 pt-3 text-center;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.dragHandle {
+  @apply w-12 h-1 bg-[#737373] rounded-full mx-auto mb-10;
+}
+
+.iconWrapper {
+  @apply w-24 h-24 flex items-center justify-center rounded-full mx-auto mb-6;
+}
+
+.iconSuccess {
+  @apply bg-brand-green text-brand-cream;
+}
+
+.iconError {
+  @apply bg-brand-green text-brand-cream;
+}
+
+.statusTitle {
+  @apply text-[19px] font-normal text-brand-green mb-3;
+}
+
+.statusMessage {
+  @apply text-[13px] text-brand-green mb-8 leading-relaxed;
+}
+
+.link {
+  @apply text-brand-green font-semibold  cursor-pointer;
+}
+
+.actionButton {
+  @apply w-full bg-brand-green text-brand-cream py-4 px-6 rounded-full font-medium text-base hover:bg-opacity-90 transition-all duration-200;
+}

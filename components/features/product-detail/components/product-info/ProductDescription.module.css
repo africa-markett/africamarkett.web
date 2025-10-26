@@ -1,0 +1,11 @@
+.descriptionSection {
+  @apply mb-0;
+}
+
+.sectionTitle {
+  @apply text-[11px] font-semibold text-brand-green mb-3;
+}
+
+.descriptionText {
+  @apply text-brand-green leading-relaxed text-[9px] font-medium;
+}
